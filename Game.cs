@@ -18,10 +18,10 @@ namespace MohawkGame2D
         /// </summary>
         public void Setup()
         {
-            Window.SetTitle("Yippee wahoo game!"); //edit name later DO NOT FORGET.
-            Window.SetSize(800,800);
+            Window.SetTitle("Christmas Trees");
+            Window.SetSize(400,400);
             Window.TargetFPS = 60;
-            Window.ClearBackground(Color.Cyan); //placeholder colour since idk what i wanna make yet
+            
         }
 
         /// <summary>
@@ -29,7 +29,14 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
         {
+            // mouse placement will change the values to be black hopefully
+            float r = 0.0f;
+            float g = 0.0f;
+            float b = 1.0f;
 
+            ColorF backGround = new ColorF(r, g, b);
+
+            Window.ClearBackground(backGround);
         }
     }
 
