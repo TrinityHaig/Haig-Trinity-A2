@@ -1,7 +1,9 @@
 ﻿// Include the namespaces (code libraries) you need below.
+using Raylib_cs;
 using System;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 // The namespace your code is in.
 namespace MohawkGame2D
@@ -12,7 +14,7 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-
+        
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -32,11 +34,18 @@ namespace MohawkGame2D
             Draw.FillColor = Color.Green;
             Draw.Triangle(x, y, x - 40, y + 80, x + 40, y + 80);
 
-            //rectangle for the stump and see if circles will render on top of the tree for the interaactable baubles
-            Draw.FillColor = Color.Yellow;
-            Draw.Circle(x,y,5);
+            //rectangle for the stump
             Draw.FillColor = Color.Black;
             Draw.Rectangle(x - 5,y + 80,10,20);
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                Draw.FillColor = Color.White;
+            }
+            else
+            {
+                Draw.FillColor = Color.Yellow;
+            }
+            Draw.Circle(x, y, 5);
         }
         /// <summary>
         ///     Update runs every frame.
@@ -52,7 +61,7 @@ namespace MohawkGame2D
 
             Window.ClearBackground(backGround);
             tree (60,100);
-            
+           
         }
     }
 
