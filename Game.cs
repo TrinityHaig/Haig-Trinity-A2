@@ -1,6 +1,7 @@
 ﻿// Include the namespaces (code libraries) you need below.
 using System;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 
 // The namespace your code is in.
 namespace MohawkGame2D
@@ -26,12 +27,14 @@ namespace MohawkGame2D
 
         public void tree(float x, float y)
         {
+            
             //The leaves of the Tree are in 3 triangle segments 
-            Draw.Triangle(x, y, x, y, x, y);
-            Draw.Triangle(x , y - 20, x , y - 20, x , y - 20);
-            Draw.Triangle(x , y - 40, x , y - 40, x , y - 40);
+            Draw.FillColor = Color.Green;
+            Draw.Triangle(x, y, x - 20, y + 40, x + 20, y + 40);
+       
+            Draw.FillColor = Color.Black;
             //rectangle for the stump and see if circles will render on top of the tree for the interaactable baubles
-            Draw.Rectangle(x, y - 140, 20, 40);
+            Draw.Rectangle(x, y - 180, 20, 40);
         }
         /// <summary>
         ///     Update runs every frame.
@@ -39,13 +42,14 @@ namespace MohawkGame2D
         public void Update()
         {
             // mouse placement will change the values to be black hopefully
-            float r = 0.0f;
-            float g = 0.0f;
-            float b = 1.0f;
+            float r = 0.1f;
+            float g = 0.3f;
+            float b = 0.5f;
 
             ColorF backGround = new ColorF(r, g, b);
 
             Window.ClearBackground(backGround);
+            tree (20,60);
             
         }
     }
