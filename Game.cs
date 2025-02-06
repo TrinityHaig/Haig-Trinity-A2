@@ -14,6 +14,8 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
+        float[] x = [60,140,200,340];
+        float[] y = [100,240,170,320,30];
         
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace MohawkGame2D
             //rectangle for the stump
             Draw.FillColor = Color.Black;
             Draw.Rectangle(x - 5,y + 80,10,20);
+            //star
             if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
             {
                 Draw.FillColor = Color.White;
@@ -46,6 +49,34 @@ namespace MohawkGame2D
                 Draw.FillColor = Color.Yellow;
             }
             Draw.Circle(x, y, 5);
+            //baubles start from here
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                Draw.FillColor = Color.Blue;
+            }
+            else
+            {
+                Draw.FillColor = Color.Red;
+            }
+            Draw.Circle(x + 7, y + 50, 5);
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                Draw.FillColor = Color.Red;
+            }
+            else
+            {
+                Draw.FillColor = Color.Blue;
+            }
+            Draw.Circle(x - 8, y + 30, 5);
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                Draw.FillColor = Color.Red;
+            }
+            else
+            {
+                Draw.FillColor = Color.Blue;
+            }
+            Draw.Circle(x - 9, y + 70, 5);
         }
         /// <summary>
         ///     Update runs every frame.
@@ -60,8 +91,14 @@ namespace MohawkGame2D
             ColorF backGround = new ColorF(r, g, b);
 
             Window.ClearBackground(backGround);
-            tree (60,100);
-           
+            tree(x[0], y[0]);
+            tree(x[1], y[3]);
+            tree(x[2], y[1]);
+            tree(x[1], y[2]);
+            tree(x[0], y[3]);
+            tree(x[3], y[2]);
+            tree(x[2], y[4]);
+            tree(x[3], y[4]);
         }
     }
 
