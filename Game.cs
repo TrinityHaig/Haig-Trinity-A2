@@ -92,10 +92,10 @@ namespace MohawkGame2D
 
             Window.ClearBackground(backGround);
             tree(x[0], y[0]);
-            tree(x[1], y[3]);
+            tree(x[0], y[3]);
             tree(x[2], y[1]);
             tree(x[1], y[2]);
-            tree(x[0], y[3]);
+            tree(x[3], y[3]);
             tree(x[3], y[2]);
             tree(x[2], y[4]);
             tree(x[3], y[4]);
