@@ -30,11 +30,13 @@ namespace MohawkGame2D
             
             //The leaves of the Tree are in 3 triangle segments 
             Draw.FillColor = Color.Green;
-            Draw.Triangle(x, y, x - 20, y + 40, x + 20, y + 40);
-       
-            Draw.FillColor = Color.Black;
+            Draw.Triangle(x, y, x - 40, y + 80, x + 40, y + 80);
+
             //rectangle for the stump and see if circles will render on top of the tree for the interaactable baubles
-            Draw.Rectangle(x, y - 180, 20, 40);
+            Draw.FillColor = Color.Yellow;
+            Draw.Circle(x,y,5);
+            Draw.FillColor = Color.Black;
+            Draw.Rectangle(x - 5,y + 80,10,20);
         }
         /// <summary>
         ///     Update runs every frame.
@@ -49,7 +51,7 @@ namespace MohawkGame2D
             ColorF backGround = new ColorF(r, g, b);
 
             Window.ClearBackground(backGround);
-            tree (20,60);
+            tree (60,100);
             
         }
     }
